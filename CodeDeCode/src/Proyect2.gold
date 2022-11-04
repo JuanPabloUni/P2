@@ -28,11 +28,11 @@ end
 //Creates the Coder based on the specified language and its requirements.
 function createCoder():ITransducer begin
 	
-	Q:= {⟨d,s,pos⟩ | d in {3,2,5}, s in ('a'‥'z'), 0 <= pos < 5  }  ∪ {3,2,5,"I","E"} ∪ {3,2,5}× ('a'‥'z')
+	Q:= {⟨d,s,pos⟩ | d in {'a'‥'z'}, s in {0, 1, 2}, 0 <= pos < 4} ∪ {0,1,2,"I","E"} ∪ {0,1,2} × ('a'‥'z')
 	Σ := ('a'‥'z')∪{' ', '$'}
 	Σ´:= Σ∪{'0', '1', '2'}∪{'#', '*', '@'}
 	q₀ := "I"
-	F := {⟨d,s,pos⟩ | d in {3,2,5}, s in ('a'‥'z'),0 <= pos < 5  }
+	F := {⟨d,s,pos⟩ | d in ('a'‥'z'), s in {0, 1, 2}, 0 <= pos < 4}
 
 	return 	GDeterministicTransducer(Q,Σ,Σ´,q₀,F,δ,g,h)
 end
@@ -80,11 +80,12 @@ end
 
 //Creates the Decoder which functions based on the Coder's stipulations.
 function createDecoder():ITransducer begin
-	Q:= {⟨d,s,pos⟩ | d in {3,2,5}, s in ('a'‥'z'),pos in (0‥4)∪{"_"}  }  ∪ {3,2,5,"I","E"} 
-	Σ´ :=('a'‥'z')∪{ ':', '2', '3', '5'}
-	Σ:=Σ´∪{ '#'}
-	q₀:= "I"
-	F:=	 {⟨d,s,pos⟩ | d in {3,2,5}, s in ('a'‥'z'),0 <= pos < 5  }
+	
+	Q:= {⟨d,s,pos⟩ | d in {'a'‥'z'}, s in {0, 1, 2}, 0 <= pos < 4} ∪ {0,1,2,"I","E"} ∪ {0,1,2} × ('a'‥'z')
+	Σ := ('a'‥'z')∪{' ', '$'}∪{'0', '1', '2'}∪{'#', '*', '@'}
+	Σ´:= ('a'‥'z')∪{' ', '$'}
+	q₀ := "I"
+	F := {⟨d,s,pos⟩ | d in ('a'‥'z'), s in {0, 1, 2}, 0 <= pos < 4}
 
 	return 	GDeterministicTransducer(Q,Σ,Σ´,q₀,F,δ1,g,h1)
 end

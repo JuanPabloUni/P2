@@ -83,16 +83,16 @@ public final class Proyect2 {
     $try:try {
       $line=31;
       gold.structures.set.ISet $v1=$newSet();
-      $v2:for (Object d:GCollections.unmodifiableCollection(GCollections.asSet(3,2,5))) {
-        for (Object s:GCollections.unmodifiableCollection($opIntvlY('a','z'))) {
+      $v2:for (Object d:GCollections.unmodifiableCollection(GCollections.asSet($opIntvlY('a','z')))) {
+        for (Object s:GCollections.unmodifiableCollection(GCollections.asSet(0,1,2))) {
           int $v3=$int(0);
-          int $v4=$int(5)-1;
+          int $v4=$int(4)-1;
           for (int pos=$v3; pos<=$v4; pos++) {
             $v1.add(GCollections.asList(d,s,pos));
           }
         }
       }
-      Object Q=$fix($opUnionY($opUnionY($v1,GCollections.asSet(3,2,5,"I","E")),$opCartsY(new Object[]{GCollections.asSet(3,2,5),$opIntvlY('a','z')})));
+      Object Q=$fix($opUnionY($opUnionY($v1,GCollections.asSet(0,1,2,"I","E")),$opCartsY(new Object[]{GCollections.asSet(0,1,2),$opIntvlY('a','z')})));
       $line=32;
       Object \u03A3=$fix($opUnionY($opIntvlY('a','z'),GCollections.asSet(' ','$')));
       $line=33;
@@ -101,10 +101,10 @@ public final class Proyect2 {
       Object q_0=$fix("I");
       $line=35;
       gold.structures.set.ISet $v5=$newSet();
-      $v6:for (Object d:GCollections.unmodifiableCollection(GCollections.asSet(3,2,5))) {
-        for (Object s:GCollections.unmodifiableCollection($opIntvlY('a','z'))) {
+      $v6:for (Object d:GCollections.unmodifiableCollection($opIntvlY('a','z'))) {
+        for (Object s:GCollections.unmodifiableCollection(GCollections.asSet(0,1,2))) {
           int $v7=$int(0);
-          int $v8=$int(5)-1;
+          int $v8=$int(4)-1;
           for (int pos=$v7; pos<=$v8; pos++) {
             $v5.add(GCollections.asList(d,s,pos));
           }
@@ -281,38 +281,40 @@ public final class Proyect2 {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=83;
+      $line=84;
       gold.structures.set.ISet $v15=$newSet();
-      $v16:for (Object d:GCollections.unmodifiableCollection(GCollections.asSet(3,2,5))) {
-        for (Object s:GCollections.unmodifiableCollection($opIntvlY('a','z'))) {
-          for (Object pos:GCollections.unmodifiableCollection($opUnionY($opIntvlY(0,4),GCollections.asSet("_")))) {
+      $v16:for (Object d:GCollections.unmodifiableCollection(GCollections.asSet($opIntvlY('a','z')))) {
+        for (Object s:GCollections.unmodifiableCollection(GCollections.asSet(0,1,2))) {
+          int $v17=$int(0);
+          int $v18=$int(4)-1;
+          for (int pos=$v17; pos<=$v18; pos++) {
             $v15.add(GCollections.asList(d,s,pos));
           }
         }
       }
-      Object Q=$fix($opUnionY($v15,GCollections.asSet(3,2,5,"I","E")));
-      $line=84;
-      Object \u03A3_=$fix($opUnionY($opIntvlY('a','z'),GCollections.asSet(':','2','3','5')));
+      Object Q=$fix($opUnionY($opUnionY($v15,GCollections.asSet(0,1,2,"I","E")),$opCartsY(new Object[]{GCollections.asSet(0,1,2),$opIntvlY('a','z')})));
       $line=85;
-      Object \u03A3=$fix($opUnionY(\u03A3_,GCollections.asSet('#')));
+      Object \u03A3=$fix($opUnionY($opUnionY($opUnionY($opIntvlY('a','z'),GCollections.asSet(' ','$')),GCollections.asSet('0','1','2')),GCollections.asSet('#','*','@')));
       $line=86;
-      Object q_0=$fix("I");
+      Object \u03A3_=$fix($opUnionY($opIntvlY('a','z'),GCollections.asSet(' ','$')));
       $line=87;
-      gold.structures.set.ISet $v17=$newSet();
-      $v18:for (Object d:GCollections.unmodifiableCollection(GCollections.asSet(3,2,5))) {
-        for (Object s:GCollections.unmodifiableCollection($opIntvlY('a','z'))) {
-          int $v19=$int(0);
-          int $v20=$int(5)-1;
-          for (int pos=$v19; pos<=$v20; pos++) {
-            $v17.add(GCollections.asList(d,s,pos));
+      Object q_0=$fix("I");
+      $line=88;
+      gold.structures.set.ISet $v19=$newSet();
+      $v20:for (Object d:GCollections.unmodifiableCollection($opIntvlY('a','z'))) {
+        for (Object s:GCollections.unmodifiableCollection(GCollections.asSet(0,1,2))) {
+          int $v21=$int(0);
+          int $v22=$int(4)-1;
+          for (int pos=$v21; pos<=$v22; pos++) {
+            $v19.add(GCollections.asList(d,s,pos));
           }
         }
       }
-      Object F=$fix($v17);
-      $line=89;
+      Object F=$fix($v19);
+      $line=90;
       $result=$invokeMethod(Proyect2.class,"GDeterministicTransducer",true,null,new Object[]{Q,\u03A3,\u03A3_,q_0,F,new GMethod(Proyect2.class,"\u03B41"),new GMethod(Proyect2.class,"g"),new GMethod(Proyect2.class,"h1")});
       if (true) break $try;
-      $line=90;
+      $line=91;
       $rethrow(new RuntimeException("The function \"createDecoder()\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -324,26 +326,26 @@ public final class Proyect2 {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=96;
+      $line=97;
       if (($opEqualY(state,"I")&&$opMembrY(input,GCollections.asSet('2','3','5')))) {
-        $line=96;
+        $line=97;
         $result=$opSubtrY(input,'0');
         if (true) break $try;
       }
       else {
-        $line=97;
+        $line=98;
         if (($opMembrY(state,GCollections.asSet(2,3,5))&&$opMembrY(input,$opIntvlY('a','z')))) {
-          $line=97;
+          $line=98;
           $result=GCollections.asList(state,input,"_");
           if (true) break $try;
         }
         else {
-          $line=98;
+          $line=99;
           $result="E";
           if (true) break $try;
         }
       }
-      $line=100;
+      $line=101;
       $rethrow(new RuntimeException("The function \"\u03B41(state:Object,input:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -351,50 +353,50 @@ public final class Proyect2 {
     }
     return $result;
   }
-  public static Object \u03B41(java.lang.Iterable $v21, Object input) {
+  public static Object \u03B41(java.lang.Iterable $v23, Object input) {
     int $line=0;
     Object $result=null;
     $try:try {
-      java.util.Iterator $v22=GCollections.unmodifiableCollection($v21).iterator();
-      Object d=$v22.next();
-      Object s=$v22.next();
-      Object pos=$v22.next();
-      $line=105;
+      java.util.Iterator $v24=GCollections.unmodifiableCollection($v23).iterator();
+      Object d=$v24.next();
+      Object s=$v24.next();
+      Object pos=$v24.next();
+      $line=106;
       if (($opEqualY(pos,"_")&&$opEqualY(input,':'))) {
-        $line=105;
+        $line=106;
         $result=GCollections.asList(d,s,1);
         if (true) break $try;
       }
       else {
-        $line=106;
+        $line=107;
         if ($opEqualY(pos,"_")) {
-          $line=106;
+          $line=107;
           $result="E";
           if (true) break $try;
         }
         else {
-          $line=107;
+          $line=108;
           if (($opEqualY(input,'#')&&!$opEqualY(pos,0))) {
-            $line=107;
+            $line=108;
             $result="E";
             if (true) break $try;
           }
           else {
-            $line=108;
+            $line=109;
             if (($opEqualY(input,s)&&$opEqualY(pos,0))) {
-              $line=108;
+              $line=109;
               $result="E";
               if (true) break $try;
             }
             else {
-              $line=109;
+              $line=110;
               if ($opMembrY(input,$opUnionY($opIntvlY('a','z'),GCollections.asSet('#')))) {
-                $line=109;
+                $line=110;
                 $result=GCollections.asList(d,s,$opModulY($opAdditY(pos,1),d));
                 if (true) break $try;
               }
               else {
-                $line=110;
+                $line=111;
                 $result="E";
                 if (true) break $try;
               }
@@ -402,7 +404,7 @@ public final class Proyect2 {
           }
         }
       }
-      $line=112;
+      $line=113;
       $rethrow(new RuntimeException("The function \"\u03B41(\u27E8d,s,pos\u27E9:java.lang.Iterable,input:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -414,26 +416,26 @@ public final class Proyect2 {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=115;
+      $line=116;
       if (($opEqualY(state,"I")&&$opMembrY(input,GCollections.asSet('2','3','5')))) {
-        $line=115;
+        $line=116;
         $result=$opSubtrY(input,'0');
         if (true) break $try;
       }
       else {
-        $line=116;
+        $line=117;
         if (($opMembrY(state,GCollections.asSet(2,3,5))&&$opMembrY(input,$opIntvlY('a','z')))) {
-          $line=116;
+          $line=117;
           $result=input;
           if (true) break $try;
         }
         else {
-          $line=117;
+          $line=118;
           $result="";
           if (true) break $try;
         }
       }
-      $line=119;
+      $line=120;
       $rethrow(new RuntimeException("The function \"h1(state:Object,input:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -441,50 +443,50 @@ public final class Proyect2 {
     }
     return $result;
   }
-  public static Object h1(java.lang.Iterable $v23, Object input) {
+  public static Object h1(java.lang.Iterable $v25, Object input) {
     int $line=0;
     Object $result=null;
     $try:try {
-      java.util.Iterator $v24=GCollections.unmodifiableCollection($v23).iterator();
-      Object d=$v24.next();
-      Object s=$v24.next();
-      Object pos=$v24.next();
-      $line=122;
+      java.util.Iterator $v26=GCollections.unmodifiableCollection($v25).iterator();
+      Object d=$v26.next();
+      Object s=$v26.next();
+      Object pos=$v26.next();
+      $line=123;
       if (($opEqualY(pos,"_")&&$opEqualY(input,':'))) {
-        $line=122;
+        $line=123;
         $result=input;
         if (true) break $try;
       }
       else {
-        $line=123;
+        $line=124;
         if (($opEqualY(input,'#')&&$opEqualY(pos,0))) {
-          $line=123;
+          $line=124;
           $result=s;
           if (true) break $try;
         }
         else {
-          $line=124;
+          $line=125;
           if (($opMembrY(input,$opIntvlY('a','z'))&&$opEqualY(pos,1))) {
-            $line=124;
+            $line=125;
             $result=$invokeMethod(Proyect2.class,"shiftSymbol",true,null,new Object[]{input,$opMinusY(d)});
             if (true) break $try;
           }
           else {
-            $line=125;
+            $line=126;
             if ($opMembrY(input,$opIntvlY('a','z'))) {
-              $line=125;
+              $line=126;
               $result=input;
               if (true) break $try;
             }
             else {
-              $line=126;
+              $line=127;
               $result="";
               if (true) break $try;
             }
           }
         }
       }
-      $line=128;
+      $line=129;
       $rethrow(new RuntimeException("The function \"h1(\u27E8d,s,pos\u27E9:java.lang.Iterable,input:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -496,36 +498,36 @@ public final class Proyect2 {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=132;
+      $line=133;
       Character r=null;
       r=$defaultValue(Character.class);
-      $line=134;
+      $line=135;
       if ($opMembrY(symbol,$opIntvlY('a','z'))) {
-        $line=135;
+        $line=136;
         r=$cast(Character.class,$fix($opAdditY('a',$opModulY($opAdditY($opSubtrY(symbol,'a'),shift),26))));
       }
       else {
-        $line=136;
+        $line=137;
         if ($opMembrY(symbol,$opIntvlY('A','Z'))) {
-          $line=137;
+          $line=138;
           r=$cast(Character.class,$fix($opAdditY('A',$opModulY($opAdditY($opSubtrY(symbol,'A'),shift),26))));
         }
         else {
-          $line=138;
+          $line=139;
           if ($opMembrY(symbol,$opIntvlY('0','9'))) {
-            $line=139;
+            $line=140;
             r=$cast(Character.class,$fix($opAdditY('0',$opModulY($opAdditY($opSubtrY(symbol,'0'),shift),10))));
           }
           else {
-            $line=140;
+            $line=141;
             r=$cast(Character.class,$fix(r));
           }
         }
       }
-      $line=142;
+      $line=143;
       $result=r;
       if (true) break $try;
-      $line=143;
+      $line=144;
       $rethrow(new RuntimeException("The function \"shiftSymbol(symbol:Object,shift:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
