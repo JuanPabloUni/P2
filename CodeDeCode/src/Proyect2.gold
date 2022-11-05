@@ -81,11 +81,11 @@ end
 //Creates the Decoder which functions based on the Coder's stipulations.
 function createDecoder():ITransducer begin
 	
-	Q:= {⟨d,s,pos⟩ | d in {'a'‥'z'}, s in {0, 1, 2}, 0 <= pos < 4} ∪ {0,1,2,"I","E"} ∪ {0,1,2} × ('a'‥'z')
-	Σ := ('a'‥'z')∪{' ', '$'}∪{'0', '1', '2'}∪{'#', '*', '@'}
-	Σ´:= ('a'‥'z')∪{' ', '$'}
+	Q:= {⟨d,pos⟩ | d in ('a'‥'z'),0 <= pos < 4  }  ∪ {"I","E","fin"} ∪ ('a'‥'z')
+	Σ := ('a'‥'z')∪{' ', '$'}
+	Σ´:= Σ∪{'0', '1', '2'}∪{'#', '*', '@'}
 	q₀ := "I"
-	F := {⟨d,s,pos⟩ | d in ('a'‥'z'), s in {0, 1, 2}, 0 <= pos < 4}
+	F := {⟨d,pos⟩ | d in ('a'‥'z'),0 <= pos < 4  }
 
 	return 	GDeterministicTransducer(Q,Σ,Σ´,q₀,F,δ1,g,h1)
 end
@@ -94,10 +94,16 @@ end
 	
 	
 function δ1(state,input) begin
-  if state="I" and input in { '2', '3', '5'}  then return input - '0'
-  elseif state in {2,3,5} and input in ('a'‥'z') then return ⟨state, input,"_"⟩
-  else return "E"
-  end
+   while input != ' ' and state = 'I' do
+   	  if state ∈{"fin","E"} then return "E"
+	  elseif state='$' then return "fin"
+	  elseif state = "I"  and input = ' '   then return ⟨state[0],0⟩	
+	   elseif state = "I" and input in ('a'‥'z') then 
+  		d,pos:=state[0], state[1]
+  		return ⟨d,(pos+1)⟩
+       end  
+    end
+
 end
 
 // ------
